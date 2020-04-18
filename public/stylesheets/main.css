@@ -6,7 +6,7 @@ html {
 }
 
 body {
-    background-color: #ff008d;
+    background-color: dodgerblue;
     color: white;
     max-width: 900px;
     margin: auto;
@@ -50,4 +50,15 @@ input {
     width: 100%;
     display: block;
     margin: 1rem auto;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: white;
+    color: dodgerblue;
+    font-size: 1.3rem;
+    cursor: pointer;
 }

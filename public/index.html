@@ -13,8 +13,8 @@
   <p>This project tries to imitate the Gist functionality provided by github but with a little twist, it works for
     repository source files.</p>
   <br />
-  <p>To create a gist, for a raw file, please follow the following step - </p>
   <div class="instructions">
+    <p>To create a gist, for a raw file, please follow the following step - </p>
     <ol>
       <li>Get the uri to raw file</li>
       <li>Extract the part starting from your username till the end</li>
@@ -41,7 +41,7 @@
   <hr />
   <div class="script-generator">
     Or you can just enter the raw url here and we will generate the script for you.
-    <input type="text" id="userInput" />
+    <input type="text" id="userInput" placeholder="Place your raw url here" />
     <button onclick="generate()">Generate</button>
     <pre><code id="gist"></code></pre>
     <br/>
