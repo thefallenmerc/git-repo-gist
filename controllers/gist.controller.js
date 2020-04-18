@@ -67,9 +67,9 @@ module.exports = function (req, res) {
 
                 code = 'Something went wrong!';
                 // highlight content
-                const highlight = Prism.highlight(JSON.stringify(code, null, 2), Prism.languages.javascript, 'javascript');
+                // const highlight = Prism.highlight(JSON.stringify(code, null, 2), Prism.languages.javascript, 'javascript');
                 // create gist template
-                const render = getTemplate(highlight, gist);
+                const render = getTemplate(code, gist);
                 // send rendered
                 res.end(makeGistScript(render));
             }

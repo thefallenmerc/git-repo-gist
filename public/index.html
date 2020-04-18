@@ -30,7 +30,7 @@
         href="https://raw.githubusercontent.com/thefallenmerc/flutter-binary-clock/master/lib/main.dart">thefallenmerc/flutter-binary-clock/master/lib/main.dart</a>
       <br />
       <br />
-      Now let us append this to our base url, we get <a href="/thefallenmerc/flutter-binary-clock/master/lib/main.dart"
+      Now let us append this to our base url, we get <a href="/gist/thefallenmerc/flutter-binary-clock/master/lib/main.dart"
         id="finalUrl">thefallenmerc/flutter-binary-clock/master/lib/main.dart</a>
       <br />
       <br />
@@ -51,14 +51,14 @@
 </body>
 <script>
   function getUrl(url = '') {
-    return location.host + "/" + url
+    return location.host + "/gist/" + url
   }
   document.getElementById('finalUrl').innerText = document.getElementById('finalUrl').href;
   document.getElementById('code').innerText = `<script src="${document.getElementById('finalUrl').href}"><\/script>`;
 
   function generate() {
     const url = document.getElementById('userInput').value.replace("https://raw.githubusercontent.com/", "");
-    const gist = location.host + "/" + url;
+    const gist = location.host + "/gist/" + url;
     document.getElementById('gist').innerText = `<script src="https://${gist}"><\/script>`;
 
   }

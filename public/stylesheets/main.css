@@ -6,21 +6,24 @@ html {
 }
 
 body {
-    max-width: 700px;
+    background-color: #ff008d;
+    color: white;
+    max-width: 900px;
     margin: auto;
     padding: 2rem;
     font-size: 1.2rem;
-    color: #555;
     line-height: 2rem;
 }
 
+a {
+    color: white;
+}
+
 h1 {
-    color: #ff008d;
     text-transform: uppercase;
 }
 
 ol {
-    color: #888;
 }
 
 ol li {
@@ -45,7 +48,6 @@ input {
     border: 1px solid lightgray;
     min-width: 300px;
     width: 100%;
-
     display: block;
     margin: 1rem auto;
 }
