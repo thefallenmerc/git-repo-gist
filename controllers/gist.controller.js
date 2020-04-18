@@ -45,7 +45,7 @@ module.exports = function (req, res) {
     // gist url without github.com
     const gist = req.params[0];
     // raw github url
-    const remoteUrl = base + gist;
+    const remoteUrl = base + '/' + gist;
     // extension
     const ext = gist.substr(gist.lastIndexOf('.') + 1);
     // get language or set extension
@@ -55,7 +55,6 @@ module.exports = function (req, res) {
     axios.get(remoteUrl)
         .then(response => {
             try {
-
                 code = lang.toLowerCase() === 'json' ? JSON.stringify(response.data, null, 2) : response.data;
                 // highlight content
                 const highlight = Prism.highlight(code, Prism.languages[lang], lang);
