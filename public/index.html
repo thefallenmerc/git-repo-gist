@@ -22,31 +22,34 @@
     </ol>
     <p>
       For example, consider <a
-        href="https://raw.githubusercontent.com/thefallenmerc/flutter-binary-clock/master/lib/main.dart">https://raw.githubusercontent.com/thefallenmerc/flutter-binary-clock/master/lib/main.dart</a>
+        href="https://raw.githubusercontent.com/thefallenmerc/git-repo-gist/master/app.js">https://raw.githubusercontent.com/thefallenmerc/git-repo-gist/master/app.js</a>
       <br />
       <br />
       The username is <a href="https://github.com/thefallenmerc">thefallenmerc</a> so the extracted url becomes
       <a
-        href="https://raw.githubusercontent.com/thefallenmerc/flutter-binary-clock/master/lib/main.dart">thefallenmerc/flutter-binary-clock/master/lib/main.dart</a>
+        href="https://raw.githubusercontent.com/thefallenmerc/git-repo-gist/master/app.js">thefallenmerc/git-repo-gist/master/app.js</a>
       <br />
       <br />
-      Now let us append this to our base url, we get <a href="/gist/thefallenmerc/flutter-binary-clock/master/lib/main.dart"
-        id="finalUrl">thefallenmerc/flutter-binary-clock/master/lib/main.dart</a>
+      Now let us append this to our base url, we get <a href="/gist/thefallenmerc/git-repo-gist/master/app.js"
+        id="finalUrl">gist/thefallenmerc/git-repo-gist/master/app.js</a>
       <br />
       <br />
       This URL can now be used as a script tag to embed the gist in any website, just like github.
       <pre><code id="code"></code></pre>
+      <br />
+      If you replace <code>gist</code> with <code>framed</code> in the generated url, you can use it in iframe too.
+      <iframe id="frame"></iframe>
     </p>
   </div>
   <hr />
   <div class="script-generator">
-    Or you can just enter the raw url here and we will generate the script for you.
+    You can just enter the raw url here and we will generate the script for you.
     <input type="text" id="userInput" placeholder="Place your raw url here" />
     <button onclick="generate()">Generate</button>
     <pre><code id="gist"></code></pre>
-    <br/>
+    <br />
 
-  <p>Created by <a href="http://github.com/thefallenmerc">Shubham Singh Chahar</a></p>
+    <p>Created by <a href="http://github.com/thefallenmerc">Shubham Singh Chahar</a></p>
   </div>
 </body>
 <script>
@@ -55,6 +58,10 @@
   }
   document.getElementById('finalUrl').innerText = document.getElementById('finalUrl').href;
   document.getElementById('code').innerText = `<script src="${document.getElementById('finalUrl').href}"><\/script>`;
+  document.getElementById('frame').src = document.getElementById('finalUrl').href.replace('/gist/', '/framed/');
+  document.getElementById('frame').onload = event => {
+    event.target.style.height = event.target.contentDocument.documentElement.offsetHeight + 'px';
+  };
 
   function generate() {
     const url = document.getElementById('userInput').value.replace("https://raw.githubusercontent.com/", "");

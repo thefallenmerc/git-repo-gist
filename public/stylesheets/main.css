@@ -23,9 +23,6 @@ h1 {
     text-transform: uppercase;
 }
 
-ol {
-}
-
 ol li {
     margin: 1rem 0;
 }
@@ -50,6 +47,7 @@ input {
     width: 100%;
     display: block;
     margin: 1rem auto;
+    box-sizing: border-box;
     border-radius: 5px;
 }
 
@@ -61,4 +59,9 @@ button {
     color: dodgerblue;
     font-size: 1.3rem;
     cursor: pointer;
+}
+
+#frame {
+    border: none;
+    width: 100%;
 }

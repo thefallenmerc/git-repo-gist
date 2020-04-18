@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 const gistController = require('../controllers/gist.controller');
+const frameController = require('../controllers/frame.controller');
 
 /* GET home page. */
 router.get('/', function (req, res) {
@@ -8,6 +9,8 @@ router.get('/', function (req, res) {
 });
 
 router.get('/gist/*', gistController);
+
+router.get('/framed/*', frameController);
 
 router.get('*', (req, res) => {
   res.status(404).end('Not found!');
