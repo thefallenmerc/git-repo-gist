@@ -1,13 +1,67 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-  <title>Express</title>
-  <link rel="stylesheet" href="/stylesheets/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Github Repo Gist</title>
+  <link rel="stylesheet" href="/stylesheets/main.css">
 </head>
 
 <body>
-  <h1>Express</h1>
-  <p>Welcome to Express</p>
+  <h1>Github Repo Gist</h1>
+  <p>This project tries to imitate the Gist functionality provided by github but with a little twist, it works for
+    repository source files.</p>
+  <br />
+  <p>To create a gist, for a raw file, please follow the following step - </p>
+  <div class="instructions">
+    <ol>
+      <li>Get the uri to raw file</li>
+      <li>Extract the part starting from your username till the end</li>
+      <li>Append the extracted part to this website's base URL to form the GIST URL</li>
+    </ol>
+    <p>
+      For example, consider <a
+        href="https://raw.githubusercontent.com/thefallenmerc/flutter-binary-clock/master/lib/main.dart">https://raw.githubusercontent.com/thefallenmerc/flutter-binary-clock/master/lib/main.dart</a>
+      <br />
+      <br />
+      The username is <a href="https://github.com/thefallenmerc">thefallenmerc</a> so the extracted url becomes
+      <a
+        href="https://raw.githubusercontent.com/thefallenmerc/flutter-binary-clock/master/lib/main.dart">thefallenmerc/flutter-binary-clock/master/lib/main.dart</a>
+      <br />
+      <br />
+      Now let us append this to our base url, we get <a href="/thefallenmerc/flutter-binary-clock/master/lib/main.dart"
+        id="finalUrl">thefallenmerc/flutter-binary-clock/master/lib/main.dart</a>
+      <br />
+      <br />
+      This URL can now be used as a script tag to embed the gist in any website, just like github.
+      <pre><code id="code"></code></pre>
+    </p>
+  </div>
+  <hr />
+  <div class="script-generator">
+    Or you can just enter the raw url here and we will generate the script for you.
+    <input type="text" id="userInput" />
+    <button onclick="generate()">Generate</button>
+    <pre><code id="gist"></code></pre>
+    <br/>
+
+  <p>Created by <a href="http://github.com/thefallenmerc">Shubham Singh Chahar</a></p>
+  </div>
 </body>
+<script>
+  function getUrl(url = '') {
+    return location.host + "/" + url
+  }
+  document.getElementById('finalUrl').innerText = document.getElementById('finalUrl').href;
+  document.getElementById('code').innerText = `<script src="${document.getElementById('finalUrl').href}"><\/script>`;
+
+  function generate() {
+    const url = document.getElementById('userInput').value.replace("https://raw.githubusercontent.com/", "");
+    const gist = location.host + "/" + url;
+    document.getElementById('gist').innerText = `<script src="${gist}"><\/script>`;
+
+  }
+</script>
 
 </html>
