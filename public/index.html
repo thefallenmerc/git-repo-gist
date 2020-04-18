@@ -59,7 +59,7 @@
   function generate() {
     const url = document.getElementById('userInput').value.replace("https://raw.githubusercontent.com/", "");
     const gist = location.host + "/" + url;
-    document.getElementById('gist').innerText = `<script src="${gist}"><\/script>`;
+    document.getElementById('gist').innerText = `<script src="https://${gist}"><\/script>`;
 
   }
 </script>
