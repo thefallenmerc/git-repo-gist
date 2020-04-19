@@ -5,6 +5,7 @@ const frameController = require('../controllers/frame.controller');
 
 /* GET home page. */
 router.get('/', function (req, res) {
+  return res.json([process.env]);
   return res.render('index', { title: 'Github Repository Gist' });
 });
 
