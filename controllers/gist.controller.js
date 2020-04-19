@@ -5,7 +5,7 @@ const axios = require('axios');
 const loadLanguages = require('prismjs/components/');
 
 const base = "https://raw.githubusercontent.com";
-const serverBase = "http://localhost:3000/";
+const serverBase = process.env.NODE_ENV === 'production' ? "https://git-repo-gist.herokuapp.com/" : "http://localhost:3000/";
 const css = serverBase + "stylesheets/style.css";
 
 // list of janguages
