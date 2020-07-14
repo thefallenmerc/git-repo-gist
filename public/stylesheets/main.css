@@ -6,17 +6,13 @@ html {
 }
 
 body {
-    background-color: dodgerblue;
-    color: white;
+    /* background-color: dodgerblue; */
+    /* color: white; */
     max-width: 900px;
     margin: auto;
     padding: 2rem;
     font-size: 1.2rem;
     line-height: 2rem;
-}
-
-a {
-    color: white;
 }
 
 h1 {
