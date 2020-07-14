@@ -26,8 +26,9 @@
 - [Github Repo Gist](#github-stats-card)
 - [How to use it](#how-to-use-it)
 - [Customization](#customization)
+- [Features](#features)
 
-# Github Repo Gist
+### Github Repo Gist
 
 Github provides you with the functionality to make and embed a gist anywhere on the internet, but there's something missing, what if we want to share a gist of code from existing repo without the need of creating a new gist for it?
 
@@ -48,8 +49,19 @@ There are few simple steps to get gist out of code -
 ### Customization
 
 Coming soon...
+
+### Features
+
+- Two modes available
+    - Script and Iframe
+- Supported Languages (I suppose all the popular languages are supported but the list below is for sure)
+    - typescript
+    - javascript
+    - dart
+    - json
+    - php
   
-  
+
 ---
 ---
 
