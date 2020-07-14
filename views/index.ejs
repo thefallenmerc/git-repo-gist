@@ -10,27 +10,34 @@
 
 <body>
   <h2>Github Repo Gist</h2>
-  <p>This project tries to imitate the Gist functionality provided by github but with a little twist, it works for
-    repository source files.</p>
+  <p>Github provides you with the functionality to make and embed a gist anywhere on the internet, but there's something
+  missing, what if we want to share a gist of code from existing repo without the need of creating a new gist for it?</p>
   <br />
   <div class="instructions">
-    <p>To create a gist, for a raw file, please follow the following step - </p>
+    <p>There are few simple steps to get gist out of code - </p>
     <ol>
-      <li>Get the uri to raw file</li>
-      <li>Extract the part starting from your username till the end</li>
-      <li>Append the extracted part to this website's base URL to form the GIST URL</li>
+      <li>Get the <code>uri</code> to the <code>raw</code> file, for eg <code>https://raw.githubusercontent.com/thefallenmerc/git-repo-gist/master/app.js</code></li>
+      <li>
+        extract the part starting from your username till end, (everything after <code>https://raw.githubusercontent.com/</code>), we get
+        <code>thefallenmerc/git-repo-gist/master/app.js</code>
+      </li>
+      <li>
+        Append this to our base url with any of the option available in between, the solution is hosted at
+        <a href="https://git-repo-gist.herokuapp.com/">https://git-repo-gist.herokuapp.com/</a>, thus we get
+        <code>https://git-repo-gist.herokuapp.com/<option>/thefallenmerc/git-repo-gist/master/app.js</code> , where option can have the
+          following value -
+          <ul>
+            <li>
+              <b>gist</b>: gives back and actual gist script
+            </li>
+            <li>
+              <b>framed</b>: gives back an iframe with the gist in it
+            </li>
+          </ul>
+      </li>
     </ol>
     <p>
-      For example, consider <a
-        href="https://raw.githubusercontent.com/thefallenmerc/git-repo-gist/master/app.js">https://raw.githubusercontent.com/thefallenmerc/git-repo-gist/master/app.js</a>
-      <br />
-      <br />
-      The username is <a href="https://github.com/thefallenmerc">thefallenmerc</a> so the extracted url becomes
-      <a
-        href="https://raw.githubusercontent.com/thefallenmerc/git-repo-gist/master/app.js">thefallenmerc/git-repo-gist/master/app.js</a>
-      <br />
-      <br />
-      Now let us append this to our base url, we get <a href="/gist/thefallenmerc/git-repo-gist/master/app.js"
+      The final url we get is <a href="/gist/thefallenmerc/git-repo-gist/master/app.js"
         id="finalUrl">gist/thefallenmerc/git-repo-gist/master/app.js</a>
       <br />
       <br />
