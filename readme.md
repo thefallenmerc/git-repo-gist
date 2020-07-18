@@ -48,7 +48,15 @@ There are few simple steps to get gist out of code -
 
 ### Customization
 
-Coming soon...
+You can now specify the portion of code you actually want to use in gist, instead of all of the file.
+
+This can be done using URL query params to the final url, for eg -
+
+> ?from=1&to=5
+
+The `from` and `to` are the line numbers, and also included. 
+
+the final URL will now be - `https://git-repo-gist.herokuapp.com/<option>/thefallenmerc/git-repo-gist/master/app.js?from=1&to=5`
 
 ### Features
 
