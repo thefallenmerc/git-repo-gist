@@ -12,7 +12,7 @@
     "ejs": "^3.0.2",
     "express": "~4.16.1",
     "morgan": "~1.9.1",
-    "prismjs": "^1.20.0",
+    "prismjs": "^1.27.0",
     "remarkable": "^2.0.0"
   }
 }
